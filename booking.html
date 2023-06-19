@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Moira Bar & Eatery</title>
+
+    <!--- favicon -->
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
+    <!-- Bootstrap -->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="/assets/css/bootstrap.min.css"
+    />
+    <!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="assets/css/booking.css" />
+
+    <!-- Custom script -->
+    <script>
+      function checkBookingDate() {
+        var selectedDate = new Date(
+          document.getElementById("arrival-date").value
+        );
+        var selectedDay = selectedDate.getDay();
+
+        if (selectedDay === 1 || selectedDay === 6) {
+          alert("Please note that we are closed on weekends.");
+        } else {
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="booking" class="section">
+      <div class="section-center">
+        <div class="container">
+          <div class="row">
+            <div class="booking-form">
+              <div class="form-header">
+                <h1>Book a Table</h1>
+              </div>
+              <form
+                action="https://script.google.com/macros/s/AKfycbwopWBjmnwRRegMrQch41vTFPy4NaGD69DQdWE1MRvcz0PLAQZMDO_y17ba9FOyUOaE/exec"
+                method="post"
+              >
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="name">Name</label>
+                      <input
+                        class="form-control"
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your name"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input
+                        class="form-control"
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone</label>
+                  <input
+                    class="form-control"
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Enter your phone number"
+                  />
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="arrival-time">Arrival Time</label>
+                      <input
+                        class="form-control"
+                        type="time"
+                        id="arrival-time"
+                        name="arrival-time"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="arrival-date">Arrival Date</label>
+                      <input
+                        class="form-control"
+                        type="date"
+                        id="arrival-date"
+                        name="arrival-date"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="party-size">Party Size</label>
+                  <select
+                    class="form-control"
+                    id="party-size"
+                    name="party-size"
+                  >
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                  </select>
+                </div>
+                <div class="form-btn">
+                  <button
+                    class="submit-btn"
+                    type="button"
+                    onclick="checkBookingDate()"
+                  >
+                    Book Now
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
